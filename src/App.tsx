@@ -1,12 +1,9 @@
-import { useState } from 'react'
+import Todos from './components/Todos'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Todos items={['Learn Advanced React', 'Learn Advanced Typescript']}/>
   )
 }
 
