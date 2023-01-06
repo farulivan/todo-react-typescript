@@ -8,12 +8,17 @@ function App() {
 
   const addTodoHandler = (todoText: string): void => {
     const newTodo = new Todo(todoText);
-    setTodos((prevState) => prevState.concat(newTodo));
+    setTodos((prevTodos) => prevTodos.concat(newTodo));
   };
+
+  const deleteTodoHandler = (todoId: string): void => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId))
+  }
+  
   return (
     <div className='w-[40rem] m-auto'>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} onDeleteTodo={deleteTodoHandler} />
     </div>
   );
 }
